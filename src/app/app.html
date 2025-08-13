@@ -340,4 +340,20 @@
 
 
 <!-- <router-outlet /> -->
-<h1>hello universe</h1>
+<!-- <h1>hello universe</h1> -->
+<main>
+  <header class="brand-name">
+    <!-- public文件夹直接映射到根路径/ -->
+    <img src="/favicon.ico" alt="logo" aria-hidden="true">
+  </header>
+  <section>
+    <input type="text" placeholder="Filter by city">
+    <button class="primary" type="button">Search</button>
+  </section>
+  <section class="content">
+    <app-home></app-home>
+  </section>
+  <section class="housing-location">
+    <app-housing-location/>
+  </section>
+</main>
