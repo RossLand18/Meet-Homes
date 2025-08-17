@@ -15,11 +15,11 @@ import {HousingService} from '../housingService';
     <!--   home works! -->
     <!-- </p> -->
     <section>
-      <input type="text" placeholder="Filter by city">
-      <button class="primary" type="button">Search</button>
+      <input type="text" placeholder="Filter by city" #filter>
+      <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
     </section>
     <section class="results">
-      <app-housing-location *ngFor="let housingLocation of housingLocationList" [housingLocation]="housingLocation">
+      <app-housing-location *ngFor="let housingLocation of filteredLocationList" [housingLocation]="housingLocation">
 
       </app-housing-location>
     </section>
@@ -30,11 +30,20 @@ export class HomeComponent {
   readonly baseUrl = "https://angular.dev/assets/images/tutorials/common";
   housingLocationList: HousingLocation[] = [];
   housingService: HousingService = inject(HousingService);
+  filteredLocationList: HousingLocation[] = [];
 
   constructor() {
-    this.housingLocationList = this.housingService.getAllHousingLocations();
+    this.housingService.getAllHousingLocations().then((housingLocationList) => {
+      this.housingLocationList = housingLocationList;
+      this.filteredLocationList = housingLocationList;
+    });
   }
-}
 
-export class Home {
+  filterResults(value: string) {
+    if (!value) this.filteredLocationList = this.housingLocationList
+
+    this.filteredLocationList = this.filteredLocationList.filter(
+      (housingLocation) => housingLocation.city.toLowerCase().includes(value.toLowerCase())
+    );
+  }
 }
