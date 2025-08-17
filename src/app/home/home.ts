@@ -25,7 +25,7 @@ import {HousingLocation} from '../housing-location';
   `,
   styleUrl: './home.css'
 })
-export class Home {
+export class HomeComponent {
   readonly baseUrl = "https://angular.dev/assets/images/tutorials/common";
   housingLocationList: HousingLocation[] = [
     {
@@ -129,4 +129,7 @@ export class Home {
       laundry: true
     }
   ];
+}
+
+export class Home {
 }

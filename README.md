@@ -2,6 +2,12 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
 
+项目资料：
+
++ [房屋假数据](https://gist.github.com/MarkTechson/efe8a9d4727ef33949b78812e66db082)
++ [css](https://gist.github.com/MarkTechson/fa601fdc856d26b3bfa5030dae147f00)
++ [房屋图片展示问题](https://github.com/angular/angular/issues/52794)
+
 ## Development server
 
 To start a local development server, run:
