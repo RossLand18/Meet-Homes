@@ -2,6 +2,12 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
 
+启动json-server
+
+```bash
+json-server --watch db.json
+```
+
 项目资料：
 
 + [房屋假数据](https://gist.github.com/MarkTechson/efe8a9d4727ef33949b78812e66db082)
